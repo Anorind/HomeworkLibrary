@@ -194,6 +194,92 @@ namespace HomeworkLibrary
             //    Console.WriteLine("Сума сторінок: " + totalPages);
             //}
 
+
+
+
+
+            //                                             Завдання 2
+            // 1) Выведите список должников.
+            //string queryString = "SELECT v.FirstName, v.LastName FROM [dbo].[Visitor] AS v " +
+            //          "JOIN [dbo].[VisitorBook] AS vb ON v.Id = vb.VisitorId " +
+            //          "WHERE vb.GaveDate IS NULL";
+            //SqlCommand command = new SqlCommand(queryString, conn);
+            //SqlDataReader reader = command.ExecuteReader();
+            //Console.WriteLine("Список боржників:");
+            //while (reader.Read())
+            //{
+            //    Console.WriteLine($"{reader[0]} {reader[1]}");
+            //}
+
+            //Выведите список авторов книги №3(по порядку из таблицы ‘Book’).
+            //string queryString = "SELECT a.FirstName, a.LastName FROM [dbo].[Author] AS a " +
+            //                     "JOIN [dbo].[BookAuthor] AS ba ON a.Id = ba.AuthorId " +
+            //                     "WHERE ba.BookId = 3";
+            //SqlCommand command = new SqlCommand(queryString, conn);
+            //SqlDataReader reader = command.ExecuteReader();
+            //Console.WriteLine("Автор книги #3:");
+            //while (reader.Read())
+            //{
+            //    Console.WriteLine($"{reader[0]} {reader[1]}");
+            //}
+
+            //Выведите список книг, которые доступны в данный момент. 
+            //string queryString = "SELECT b.Title FROM [dbo].[Book] AS b " +
+            //                     "LEFT JOIN [dbo].[VisitorBook] AS vb ON b.Id = vb.BookId " +
+            //                     "WHERE vb.BookId IS NULL OR vb.GaveDate IS NOT NULL";
+            //SqlCommand command = new SqlCommand(queryString, conn);
+            //SqlDataReader reader = command.ExecuteReader();
+            //Console.WriteLine("Список книг які доступні в даний момент (але я такі не додавав))) ):");
+            //while (reader.Read())
+            //{
+            //    Console.WriteLine($"{reader[0]}");
+            //}
+
+
+            //Вывести список книг, которые на руках у пользователя №2. 
+            //string queryString = " SELECT b.Title \r\nFROM [dbo].[Book] AS b\r\n" +
+            //    "JOIN [dbo].[VisitorBook] AS vb ON b.Id = vb.BookId\r\n" +
+            //    "WHERE vb.VisitorId = 2 AND vb.GaveDate IS NULL;";
+            //SqlCommand command = new SqlCommand(queryString, conn);
+            //SqlDataReader reader = command.ExecuteReader();
+            //Console.WriteLine("Список книг які на руках у користувача №2:");
+            //while (reader.Read())
+            //{
+            //    Console.WriteLine($"{reader[0]}");
+            //}
+
+            //Вывести список книг, которые были взяты за последние 2 недели.
+            //string queryString = "SELECT b.Title \r\n" +
+            //    "FROM [dbo].[Book] AS b\r\n" +
+            //    "JOIN [dbo].[VisitorBook] AS vb ON b.Id = vb.BookId\r\n" +
+            //    "WHERE vb.TookDate >= DATEADD(WEEK, -2, GETDATE());";
+            //SqlCommand command = new SqlCommand(queryString, conn);
+            //SqlDataReader reader = command.ExecuteReader();
+            //Console.WriteLine("Список книг які були взяті за останні 2 тижня:");
+            //while (reader.Read())
+            //{
+            //    Console.WriteLine($"{reader[0]}");
+            //}
+
+            //Обнулите задолженности всех должников.
+            //string queryString = "UPDATE [dbo].[VisitorBook]\r\n" +
+            //    "SET GaveDate = GETDATE()\r\n" +
+            //    "WHERE GaveDate IS NULL;";
+            //SqlCommand command = new SqlCommand(queryString, conn);
+            //command.ExecuteReader();
+
+            //Вывести количество книг, взятых определённым посетителем за последний год.
+            //string queryString = "SELECT COUNT(*) \r\n" +
+            //    "FROM [dbo].[VisitorBook]\r\n" +
+            //    "WHERE VisitorId = 2 AND TookDate >= DATEADD(YEAR, -1, GETDATE());";
+            //SqlCommand command = new SqlCommand(queryString, conn);
+            //SqlDataReader reader = command.ExecuteReader();
+            //Console.WriteLine("Кількість книг взятих вівідувачем №2 в списку за останній рік:");
+            //while (reader.Read())
+            //{
+            //    Console.WriteLine($"{reader[0]}");
+            //}
+
             conn.Close();
             Console.ReadLine();
         }
